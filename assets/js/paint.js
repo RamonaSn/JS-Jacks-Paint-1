@@ -2,15 +2,15 @@ function configureListeners() {
     let images = document.getElementsByTagName('img');// select img elements  
 
 
-     for (var i = 0; i < images.length; i++) {        
+     for (let i = 0; i < images.length; i++) {        
         document.getElementById(images[i].id).addEventListener('mouseover', addOpacity, false)
         document.getElementById(images[i].id).addEventListener('mouseout', removeOpacity, false)// iterate over images and add mouseover event listeners      
     } 
 }
 
 function addOpacity(event) {
-    if(this.classList.contains('dim')){
-        this.classList.remove('dim');// add appropriate CSS class    
+    if(!this.classList.contains('dim')){
+        this.classList.add('dim');// add appropriate CSS class    
     }
     getProductInfo(event.target.id); 
 }
